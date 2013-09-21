@@ -251,7 +251,7 @@ baseAccounts.getList().then(function (accounts) {
     
     // Custom methods are available now :).
     // GET /accounts/123/users/messages?param=myParam
-    users.customGET("messages", {param: "myParam"})
+    users.customGET({}, "messages", {param: "myParam"})
     
     var firstUser = users[0];
 
@@ -577,7 +577,7 @@ Let's see an example of this:
 Restangular.one("accounts", 123).customGET("messages")
 
 // GET /accounts/messages?param=param2
-Restangular.all("accounts").customGET("messages", {param: "param2"})
+Restangular.all("accounts").customGET({}, "messages", {param: "param2"})
 ````
 ## Copying elements
 Before modifying an object, we sometimes want to copy it and then modify the copied object. We can't use `angular.copy` for this because it'll not change the `this` binded in the functions we add to the object. In this cases, you must use `Restangular.copy(fromElement)`.
